@@ -34,18 +34,31 @@ body:
       required: true
 
   - type: input
-    id: version
+    id: memori_version
     attributes:
       label: Memori Version
       description: What version of the SDK are you using?
       placeholder: e.g., 3.0.0
 
+  - type: dropdown
+    id: sdk
+    attributes:
+      label: SDK / Package
+      description: Which Memori package is your question about?
+      options:
+        - Python SDK
+        - TypeScript SDK
+        - OpenClaw
+        - Other
+    validations:
+      required: true
+
   - type: input
     id: environment
     attributes:
-      label: OS / Python Version
-      description: e.g., macOS 14 / Python 3.12
-      placeholder: macOS / Python 3.12
+      label: OS / Runtime Version
+      description: e.g., macOS 14 / Python 3.12 or Ubuntu 22.04 / Node 20
+      placeholder: macOS / Python 3.12 or Node 20
 
   - type: textarea
     id: question
@@ -61,6 +74,4 @@ body:
       label: Relevant Context
       description: Share relevant code, configuration, or logs that help explain your situation.
       placeholder: |
-        from memori import Memori
-        # Context here...
-      render: python
+        Share snippets, config, or logs here.
